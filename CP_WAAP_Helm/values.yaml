@@ -13,8 +13,8 @@ image:
   cpRepo: "mnicholssync/nginx-ingress-ctl-cp:cp-agent-alpine"
 
 imagePullSecrets: []
-nameOverride: "test"
-fullnameOverride: "test"
+nameOverride: "cpnano"
+fullnameOverride: "cpnano"
 
 serviceAccount:
   # Specifies whether a service account should be created
