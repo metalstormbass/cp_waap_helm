@@ -7,15 +7,14 @@ replicaCount: 1
 #Check Point WAAP Agent Token 
 token: "Insert token here"
 
+
 image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  nginxCtlCpRepo: "mnicholssync/nginx-ingress-ctl-cp:demo"
+  cpRepo: "mnicholssync/nginx-ingress-ctl-cp:cp-agent-alpine"
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "test"
+fullnameOverride: "test"
 
 serviceAccount:
   # Specifies whether a service account should be created

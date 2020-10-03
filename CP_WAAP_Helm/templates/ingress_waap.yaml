@@ -23,7 +23,6 @@ spec:
       containers:
       - args:
         - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
-        - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
         env:
         - name: POD_NAMESPACE
           valueFrom:
@@ -52,7 +51,7 @@ spec:
         - --fog
         - https://i2-agents.cloud.ngen.checkpoint.com
         - --token
-        - {{.Values.nanoToken}}
+        - {{.Values.token}}
         command:
         - /cp-nano-agent
         image: {{.Values.image.cpRepo}}
