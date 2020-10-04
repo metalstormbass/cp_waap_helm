@@ -6,7 +6,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-ingress
-  namespace: default 
+  namespace: {{.Values.waapNamespace}} 
 spec:
   selector:
    matchLabels:
@@ -22,9 +22,10 @@ spec:
     spec:
       containers:
       - args:
-        - -nginx-configmaps={{.Values.waapNamespace}}/nginx-config
+        - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
+        - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
         env:
-        - name: {{.Values.waapNamespace}}
+        - name: POD_NAMESPACE
           valueFrom:
             fieldRef:
               apiVersion: v1
