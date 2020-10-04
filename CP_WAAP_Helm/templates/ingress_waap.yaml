@@ -22,9 +22,9 @@ spec:
     spec:
       containers:
       - args:
-        - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
+        - -nginx-configmaps={{.Values.waapNamespace}}/nginx-config
         env:
-        - name: POD_NAMESPACE
+        - name: {{.Values.waapNamespace}}
           valueFrom:
             fieldRef:
               apiVersion: v1
