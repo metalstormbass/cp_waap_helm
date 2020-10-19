@@ -9,8 +9,8 @@ token: "Insert token here"
 
 
 image:
-  nginxCtlCpRepo: "mnicholssync/nginx-ingress-ctl-cp:demo"
-  cpRepo: "mnicholssync/nginx-ingress-ctl-cp:cp-agent-alpine"
+  nginxCtlCpRepo: "checkpoint/infinity-next-nginx"
+  cpRepo: "checkpoint/infinity-next-nano-agent"
 
 waapNamespace: "Insert Namespace here" 
 
